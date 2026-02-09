@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Inter", var(--font-geist-sans);
+  --font-display: "Outfit", var(--font-geist-sans);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --radius-xs: 0.5rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 9999px;
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
+  --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #09090b;
+  --primary: #09090b;
+  --secondary: #ffffff;
+  --accent: #000000;
+  --muted: #71717a;
+  --border: #e4e4e7;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.05);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #030303;
+  --foreground: #f8fafc;
+  --primary: #f8fafc;
+  --secondary: #000000;
+  --accent: #ffffff;
+  --muted: #a1a1aa;
+  --border: #1f1f23;
+
+  --glass-bg: rgba(0, 0, 0, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.heading-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Utilities */
+.rounded-card {
+  border-radius: var(--radius-xl);
+}
+
+.soft-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.soft-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-premium);
 }
