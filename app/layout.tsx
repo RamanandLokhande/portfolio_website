@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
-  title: "Ramanand Lokhande | Frontend Engineer",
-  description: "Frontend Engineer specializing in high-performance web applications with React and Next.js.",
+  title: "Ramanand Lokhande | Full Stack Engineer",
+  description: "Full Stack Engineer specializing in high-performance web applications with React and Next.js.",
 };
 
 export default function RootLayout({
