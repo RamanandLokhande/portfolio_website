@@ -5,6 +5,7 @@ import { projects } from "@/data/projects";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 export function FeaturedProjects() {
@@ -35,8 +36,13 @@ export function FeaturedProjects() {
                         >
                             <Card glass className="group overflow-hidden border-transparent hover:bg-secondary/5">
                                 <div className="flex flex-col sm:flex-row">
-                                    <div className="sm:w-1/3 aspect-video sm:aspect-square bg-secondary/30 flex items-center justify-center p-6 transition-colors group-hover:bg-secondary/50">
-                                        <span className="font-display text-sm font-bold text-muted/30 uppercase tracking-widest">{project.title}</span>
+                                    <div className="sm:w-1/3 aspect-video sm:aspect-square bg-secondary/30 relative overflow-hidden transition-colors group-hover:bg-secondary/50">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                     <div className="flex-1 p-8 flex flex-col justify-center">
                                         <div className="mb-4">

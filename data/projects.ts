@@ -13,9 +13,9 @@ export const projects: Project[] = [
         id: "1",
         title: "Aayojak event mangement platform ",
         description: "A professional event management platform using LLMs and modern web frameworks.in progress........",
-        image: "/images/project-1.jpg",
+        image: "/aayojak-logo.png",
         tags: ["Next.js", "React", "AI"],
-        link: "https://github.com",
+        link: "https://github.com/aayojak-events/aayojak.git",
         featured: true
     },
 ];
