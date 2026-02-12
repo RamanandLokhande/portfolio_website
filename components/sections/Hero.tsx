@@ -82,8 +82,8 @@ export function Hero() {
                         <div className="h-px w-8 bg-border" />
                         <div className="flex gap-4">
                             {[
-                                { icon: Github, href: "https://github.com" },
-                                { icon: Linkedin, href: "https://linkedin.com" },
+                                { icon: Github, href: "https://github.com/RamanandLokhande" },
+                                { icon: Linkedin, href: "https://www.linkedin.com/in/ramanand-lokhande-580374277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
                                 { icon: Mail, href: "mailto:ramanandvl770@gmail.com" },
                             ].map((social, i) => (
                                 <a
